@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modern Bill Generator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #f4f8fb;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: 60px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <h3 class="text-center mb-4">🧾 Bill Generator</h3>
+      <form action="/generate-bill" method="POST">
+        <div class="mb-3">
+          <label for="customer_name" class="form-label">Customer Name</label>
+          <input type="text" class="form-control" name="customer_name" required>
+        </div>
+        <div class="mb-3">
+          <label for="item" class="form-label">Item</label>
+          <input type="text" class="form-control" name="item" required>
+        </div>
+        <div class="mb-3">
+          <label for="quantity" class="form-label">Quantity</label>
+          <input type="number" class="form-control" name="quantity" required>
+        </div>
+        <div class="mb-3">
+          <label for="price" class="form-label">Price (₹)</label>
+          <input type="number" class="form-control" name="price" required step="0.01">
+        </div>
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary">Generate Bill</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
